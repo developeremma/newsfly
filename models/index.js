@@ -1,4 +1,5 @@
 module.exports = {
-    Trend: require("./trend")
+    Trend: require("./trend"),
+    City: require("./city")
   };
   

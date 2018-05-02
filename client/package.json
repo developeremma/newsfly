@@ -2,12 +2,14 @@
   "name": "gettrends",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3035",
+  "proxy": "http://localhost:3037",
   "dependencies": {
-    "react": "^16.3.1",
+    "axios": "^0.16.2",
+    "react": "^16.3.2",
     "react-dom": "^16.3.1",
+    "react-google-maps": "^9.4.5",
     "react-scripts": "1.1.4",
-    "axios": "^0.16.2"
+    "recompose": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",

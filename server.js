@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3035;
+const PORT = process.env.PORT || 3037;
 //const getTrends = require("./controllers/getTrends")
 
 // Configure body parser for AJAX requests
@@ -14,7 +14,7 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-//setInterval(getTrends, 1000 * 60 * 60)
+//setInterval(getTrends, 2000 * 60)
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gettrends");
 

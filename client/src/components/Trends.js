@@ -8,16 +8,13 @@ class Trends extends Component {
     }
 
     componentWillMount() {
-        console.log('oh hi')
         this.loadTrends();
-        console.log('oh hi 1')
 
     }
 
     loadTrends = () => {
         API.getTrends()
           .then(res => {
-            console.log('I am res', res)
             this.setState({ trends: res.data })
           })
           .catch(err => console.log(err));
@@ -25,11 +22,26 @@ class Trends extends Component {
 
     render() {
         return (
-            this.state.trends.map(trend => (
-                <Trend key={trend._id}>
-                    {trend.title}
-                </Trend>
-            ))
+            <section id="about">
+                <div className="container">
+                    
+                    <div className="section-heading scrollpoint sp-effect3">
+                        <h1>Trending #</h1>
+                            <div>
+                                {this.state.trends.map(trend => (
+                                    <Trend key={trend._id}>
+                                        {trend.title}
+                                    </Trend>
+                                ))} 
+                            </div>
+                        <div className="divider"></div>
+                        <p>News Topics Around the World</p>
+                    </div>
+
+                    <div className="articles">
+                    </div>
+                </div>
+            </section>
         )
     } 
 }

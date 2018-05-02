@@ -6,7 +6,7 @@ module.exports = {
     db.Trend
       .find(req.query)
       .then(dbModel => {
-          console.log("I have find all res json in trendsController// i'm doing it on the 3035/api/trends")
+          //console.log("I have find all res json in trendsController// i'm doing it on the 3035/api/trends")
         res.json(dbModel)
       })
       .catch(err => res.status(422).json(err));
