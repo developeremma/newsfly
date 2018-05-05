@@ -31,9 +31,13 @@ import {
             center: {lat: parseFloat(city.coordinates.lat), lng: parseFloat(city.coordinates.long)},
             radius: city.magnitude * 10000
             }
+        
         }
+        onClick={() => props.handleCircleOnClick(city._id)}
     
-      />
+      > <a href="#about"></a>
+      </Circle>
+
     ))}
       
        {/* <Marker

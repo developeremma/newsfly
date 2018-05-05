@@ -5,4 +5,7 @@ const trendsController = require("../../controllers/trendsController");
 router.route("/")
   .get(trendsController.findAll)
 
+router.route("/:city_id")
+  .get(trendsController.findByCity)
+
   module.exports = router

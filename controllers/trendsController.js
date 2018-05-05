@@ -15,5 +15,10 @@ module.exports = {
     db.Trend
       .create(trend)
       .catch(err => console.log(err));
+  },
+
+  findByCity: function(req, res) {
+      var city_id = req.params.city_id
+      db.Trend.find({city_id: city_id}).then(response => res.json(response))
   }
 }

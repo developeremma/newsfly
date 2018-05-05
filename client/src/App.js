@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import Trends from './components/Trends'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SuperComponent from './components/SuperComponent'
 import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Register from './components/Register'
 //import MapWithAMarker from './components/Map'
-import ParentMap from './components/ParentMap'
 import './index.css';
 
 class App extends Component {
+  
   render() {
     return (
       <div>
        
-        <Navbar />
-        <ParentMap />
-        {/* <MapWithAMarker
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwAMVJZ7_k6WW_jCgwBDI43nR_VNOJsmg&v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div id="map" />}
-          mapElement={<div style={{ height: `100%` }} />}
-        /> */}
-        <Trends />
+        <Router>
+          <div>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={SuperComponent} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+          </Switch>
+          </div>
+        </Router>
       </div>
     )
   }

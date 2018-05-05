@@ -5,10 +5,14 @@
   "proxy": "http://localhost:3037",
   "dependencies": {
     "axios": "^0.16.2",
+    "newsapi": "^2.2.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.1",
     "react-google-maps": "^9.4.5",
+    "react-highlight": "^0.12.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-tagcloud": "^1.2.0",
     "recompose": "^0.27.0"
   },
   "scripts": {

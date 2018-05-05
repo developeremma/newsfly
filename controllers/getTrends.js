@@ -13,18 +13,7 @@ var client = new Twitter ({
   })
 
 
- db.City.find({}).then((cities) => {
-            let i = 0
-        var getTrendsEverySecond = setInterval(() => {
-            getTrends(cities[i])
-            i++
-            if (i === cities.length) {
-                clearInterval(getTrendsEverySecond);
-            }
-        },1000);
-    
-            getTrends(cities)
-})
+ 
 
 
 
@@ -102,9 +91,13 @@ function getTrends(cities) {
                 console.log("newTrend ", newTrend)
 
                 console.log("cities._id ", cities._id)
-                trendsController.create(newTrend)
-                
-                
+                db.Trend.findOneAndUpdate({title: newTrend.title, city_id: newTrend.city_id}, {tweet_volume: newTrend.tweet_volume}).then((response) => {
+                    if (response ===  null) {
+                        db.Trend.create(newTrend)
+                    } else {
+                        console.log('response ', response)
+                    }
+                })
                 
             });
             //console.log("tweets", tweets[0])
@@ -115,3 +108,19 @@ function getTrends(cities) {
         })
 }
 
+function getCitiesCallTrends(){
+    db.City.find({}).then((cities) => {
+        let i = 0
+    var getTrendsEverySecond = setInterval(() => {
+        getTrends(cities[i])
+        i++
+        if (i === cities.length) {
+            clearInterval(getTrendsEverySecond);
+        }
+    },1000);
+    
+        getTrends(cities)
+    })
+}
+
+module.exports = getCitiesCallTrends

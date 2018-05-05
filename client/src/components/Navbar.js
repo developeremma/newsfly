@@ -5,13 +5,25 @@ const Navbar = () => (
         <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
                     <div className="container">
                         
-                        <div className="navbar-header">
+                        <div className="navbar-header" id="svgWrap">
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                                 <span className="fa fa-bars fa-lg"></span>
                             </button>
-                            <a className="navbar-brand" href="index.html">
-                                <img src="assets/img/freeze/newsflyme.png" alt="" className="logo" />
-                            </a>
+                            {/* <a className="navbar-brand" href="/"></a> */}
+
+                                <svg viewBox="0 0 960 300">
+                                    <symbol id="s-text">
+                                        <text textAnchor="middle" x="50%" y="80%">Newsfly</text>
+                                    </symbol>
+
+                                    <g className = "g-ants">
+                                        <use xlinkHref="#s-text" className="text-copy"/>
+                                        <use xlinkHref="#s-text" className="text-copy"/>
+                                        <use xlinkHref="#s-text" className="text-copy"/>
+                                        <use xlinkHref="#s-text" className="text-copy"/>
+                                        <use xlinkHref="#s-text" className="text-copy"/>
+                                    </g>
+                                </svg>
                         </div> 
 
                     
@@ -22,9 +34,11 @@ const Navbar = () => (
                                 </li>
                                 <li><a href="#features">Your News</a>
                                 </li>
-                                <li><a href="#reviews">About Newsfly</a>
+                                <li><a href="/login">Login</a>
                                 </li>
-                                <li><a href="#support">support</a>
+                                <li><a href="/register">Register</a>
+                                </li>
+                                <li><a href="/logout">logout</a>
                                 </li>
                             </ul>
                         </div>
