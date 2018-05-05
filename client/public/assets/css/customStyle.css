@@ -1,0 +1,92 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+  
+  svg {
+      display: block;
+      font: 10.5em 'Montserrat';
+      width: 960px;
+      height: 200px;
+      margin: 0 auto;
+  }
+  
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+  
+.text-copy:nth-child(1){
+    stroke: white;
+    animation-delay: -1;
+}
+  
+.text-copy:nth-child(2){
+    stroke: white;
+    animation-delay: -2s;
+}
+  
+  .text-copy:nth-child(3){
+      stroke: #1b58ac;
+      animation-delay: -3s;
+  }
+  
+  .text-copy:nth-child(4){
+      stroke: #1b58ac;
+      animation-delay: -4s;
+  }
+  
+.text-copy:nth-child(5){
+    stroke: #ffff;
+    animation-delay: -5s;
+}
+  
+@keyframes stroke-offset{
+    100% {stroke-dashoffset: -35%;}
+}
+
+#map {
+    margin-top: 300px;
+    height: 600px;
+}
+
+#loginForm, #registerForm {
+    margin-top: 300px;
+}
+
+#h2Reg {
+    text-align: center;
+}
+
+#svgWrap {
+    width: 100%;
+    background-color: #48a1ec;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+    background-color: #48a1ec;
+    padding: 0px;
+}
+
+.trend {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.description {
+    font-size: 25px;
+}
+
+.article {
+    text-align: center;
+    margin-top: 15px;
+    background-color:  #48a2ec34;
+}

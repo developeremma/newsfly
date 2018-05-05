@@ -1,37 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import Trend from "./Trend"
-import API from '../utils/API'
 
-class Trends extends Component {
-    state = {
-        trends: []
-    }
+const Trends = props => (
+    <section id="about">
+                <div className="container">
+                    
+                    <div className="section-heading scrollpoint sp-effect3">
+                        <h1>Trending in {props.currentCity.name}</h1>
+                            <div>
+                                {props.cityTrends.map(trend => (
+                                    <Trend 
+                                        key={trend._id}
+                                        trendTitle={trend.title}
+                                        handleTrendOnClick={props.handleTrendOnClick}
+                                    >
+                                        {trend.title}
+                                    </Trend>
+                                ))} 
+                            </div>
+                        <div className="divider"></div>
+                    </div>
 
-    componentWillMount() {
-        console.log('oh hi')
-        this.loadTrends();
-        console.log('oh hi 1')
-
-    }
-
-    loadTrends = () => {
-        API.getTrends()
-          .then(res => {
-            console.log('I am res', res)
-            this.setState({ trends: res.data })
-          })
-          .catch(err => console.log(err));
-      };
-
-    render() {
-        return (
-            this.state.trends.map(trend => (
-                <Trend key={trend._id}>
-                    {trend.title}
-                </Trend>
-            ))
-        )
-    } 
-}
-
+                </div>
+    </section>
+)
+            
+     
 export default Trends
